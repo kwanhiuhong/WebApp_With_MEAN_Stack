@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FunBoooks</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/javascripts/myscripts.js"></script>
+  </head>
+  <body ng-app="FunBooks" ng-controller="FunbooksController" ng-init="loadpage()">
+
+        <div id="header">     
+            <div id="iconarea">
+                <span id="login" ng-click="signin()" ng-show="show_signin">Sign in</span>
+                <span class = "say_hello" id="{{userid}}" ng-show="show_user_if_login">
+                    Hello, {{username}}! <span id="signout" ng-click="signout()">(Sign Out)</span>
+                </span> 
+                    <span ng-show="show_big_title" id="funbooks">FunBooks</span> 
+                <span id="shopping_cart" ng-show="show_cart" ng-click = "loadcart()">
+                  <img src="/images/book9.jpg" width="50px" height="30px">  {{totalnum_in_cart}} in Cart
+                </span>
+                </div>
+        </div>
+        <div id="content">
+        <div class="loaded_cart" ng-show="show_loaded_cart">
+                <h3> Shopping Cart</h3>
+                <span ng-show = "booksInLoadedCard" ng-repeat="books_in_cart in carts_details">
+                    <img src="{{books_in_cart.image}}" width="80" height="80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Title: {{books_in_cart.title}} &nbsp;&nbsp;&nbsp;&nbsp;
+                    Authors: {{books_in_cart.author}} &nbsp;&nbsp;&nbsp;&nbsp;
+                    Price: {{books_in_cart.price}} &nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <span ng-bind-html="{{books_in_cart.title}}"> </span> -->
+                    Quantity:&nbsp;
+                        <!-- <select ng-model="quantityOfBook" id="{{books_in_cart._id}}"> -->
+                    <select class="{{books_in_cart._id}}" ng-model="SelectValue_in_Cart" ng-change="UpdateCart(this)">
+                        <!-- <select ng-model="quantityOfBook" id="{{books_in_cart._id}}" ng-init="loadquantity(this)">   -->
+                        <option ng-repeat = "cart_quantity_options in cart_quant" value="{{cart_quantity_options.quantity}}">{{cart_quantity_options.quantity}}</option>
+                    </select>
+                    <div ng-init="loadquantity(this)"></div>
+                    <br>
+                    <br>
+                    <br>
+                </span>
+                <h4>Cart subtotal ({{totalnum_in_cart_in_loadedcart}} item(s)) : $ {{total_money_in_cart_in_loadedcart}}</h4>
+                <button ng-click="Proceed_to_check_out()">Proceed to check out</button>
+        </div>
+        <div class="proceed_to_check_out" ng-show = "show_proceed_to_check_out">
+            <span ng-show="the_span_in_Classname_proceed_to_check_out">
+            You have successfully placed order<br>
+            for {{totalnum_in_cart_in_loadedcart}} item(s)<br><br>
+            $ {{total_money_in_cart_in_loadedcart}} paid
+            </span>
+            <button id="continue_browsing" ng-click="loadpage(xContinue_browse)">Continue Browsing 》</button>
+        </div>
+        <div id="Categories" ng-show="showCategory">
+            <ul>
+                <li>
+                    <h3 ng-repeat="category in categoryList" ng-click= "loadpage(category)" value="category">{{category}}</h3>
+                    <!-- <h3 ng-click="loadpage(xComputer)" value="Computer">Computer</h3>
+                    <h3 ng-click="loadpage(xHistory)" value="History">History</h3>
+                    <h3 ng-click="loadpage(xLiterature)" value="Literature">Literature</h3>  -->
+                </li>           	
+            </ul>
+        </div>
+       
+        <div id="login_page" ng-show="show_loginpage">
+            <span id="login_failure" ng-show="show_login_failure">Login failure</span><br>
+            Username:  <input type="text" ng-model="user_name"></input><br>
+            <br>
+            Password:  <input type="text" ng-model="user_password"></input><br>
+            <br>
+            <button id = "signinButton" ng-click="address_login()">Sign in</button>
+        </div>
+        <div id="logout_page" ng-show="show_logoutpage">
+            <h3>You still have {{totalnum_in_cart}} item(s) in your cart</h3><br>
+            <span>
+                <button ng-click="signout(xCancel)">Cancel sign-out</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button ng-click="signout(xConfirm)">Confirm sign-out</button>
+            </span>
+        </div>
+
+        <div id='bookDisplay' ng-show="show_books">
+            <div id='{{bookinfo._id}}' class="bookdisplay" ng-repeat='bookinfo in BookCollections' ng-click="loadbook(bookinfo._id)" ng-show="show_booksInitial">
+                <br>
+                <img src="{{bookinfo.image}}" width="80" height="80"><br>
+                Title: {{bookinfo.title}}<br>
+                Authors: {{bookinfo.author}}<br>
+                Price: {{bookinfo.price}}<br>
+            </div>
+
+            <div id="select_page_bar" ng-show="show_page_select">
+                <button ng-click="loadpage(xPrevious)">《 Previous Page</button>    page  
+                <select id="page_select" ng-model="select_value" ng-change="loadpage(categories_at_bar)">
+                    <option ng-repeat="page in pageNumber" value="{{page.page}}">{{page.page}}</option>
+                    <!-- <option value="2">2</option> -->
+                </select> of {{categories_at_bar}}    
+                    <button ng-click="loadpage(xNext)">Next Page 》</button>
+            </div>
+
+            <div id="Show_details_of_books" ng-show="showBookDetails">
+                <img src="{{DetailsOfBooks_image}}" width="110" height="132"><br>
+                <span ng-show="showBookdetail2_bookdetails"></span>
+                <span class="details_of_books" id="{{specific_bookid}}" ng-show="showBookdetails_2">
+                  Title: {{DetailsOfBooks_title}}<br>
+                  Authors: {{DetailsOfBooks_author}}<br>
+                  Price: {{DetailsOfBooks_price}}<br> 
+                  Publisher: {{DetailsOfBooks_publisher}}<br> 
+                  Publishing date: {{DetailsOfBooks_date}}<br> 
+                  Book Description: {{DetailsOfBooks_description}}<br> 
+                </span>
+                <span class= "success_added_to_cart" ng-show="show_added_to_cart">
+                    Added to cart<br>
+                    <br>
+                    <br>
+                    Cart subtotal ({{totalnum_in_cart}} item(s)) : $ {{total_money_in_cart}}
+                </span>
+                
+                <button id="continue_browsing" ng-show="show_continue_browsing" ng-click="loadpage(xContinue_browse)">Continue Browsing 》</button>
+                
+                <span id="Add_to_Cart" ng-show='showBookdetail3_selectList'>
+                  <br>
+                  Quantity: <select ng-model="select_add_cart_value">
+                      <option value=1>1</option>
+                      <option value=2>2</option>
+                      <option value=3>3</option>
+                      <option value=4>4</option>
+                      <option value=5>5</option>
+                    </select><br><br><br>
+                  <button id="addbuttion" ng-click="handle_add_cart()">Add to cart</button>
+                  </span>
+                <button id="goback" ng-click="goBack()" ng-show="showBookdetail4_Goback">《 Go Back</button>
+            </div>
+        </div>
+        
+      </div>
+
+</body>
+</html>
