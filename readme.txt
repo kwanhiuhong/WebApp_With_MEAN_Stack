@@ -3,6 +3,7 @@
 This program is a web application simulating an online bookstore, it contains functionalities like Login/Logout using sessions, Putting books into Cart, making payments and Books describing etc.
 
 Some special notes:
+
 1. A special "bookId" is used for everybook, instead of the automatically obtained _id. "bookId" is an integer starting from one. If a new book is to be inserted, make sure bookId doesn't contradict to any other books
 2. For bookCollection, the "price" field is a string like "$xx" instead of an integer
 2. There are two users in the system, "1" with password "1" and "Henry" with password "123456".
@@ -18,3 +19,6 @@ For line 298-308, 317-327, 341-352, 410-420, 461-472, 478-488, 535-545, they are
 3.Run the mongo and then typed "use FunBooks"
 4.type "show collections" you get what collections you have
 5.type "db.userCollection.find()" show all details about the user collection.
+
+Here is the UI of this page:
+![alt text](https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/Book_Shop_UI.png)
