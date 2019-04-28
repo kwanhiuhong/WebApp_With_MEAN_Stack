@@ -42,6 +42,7 @@
                 </span>
                 <h4>Cart subtotal ({{totalnum_in_cart_in_loadedcart}} item(s)) : $ {{total_money_in_cart_in_loadedcart}}</h4>
                 <button ng-click="Proceed_to_check_out()">Proceed to check out</button>
+                <button ng-click="Back()">Back</button>
         </div>
         <div class="proceed_to_check_out" ng-show = "show_proceed_to_check_out">
             <span ng-show="the_span_in_Classname_proceed_to_check_out">
@@ -64,11 +65,13 @@
        
         <div id="login_page" ng-show="show_loginpage">
             <span id="login_failure" ng-show="show_login_failure">Login failure</span><br>
-            Username:  <input type="text" ng-model="user_name"></input><br>
+            Username:  <input type="text" ng-model="user_name" placeholder="Type your username here..."></input><br>
             <br>
-            Password:  <input type="text" ng-model="user_password"></input><br>
+            Password:  <input type="password" ng-model="user_password" ng-keypress="address_login_enter($event)" placeholder="Type your password here..."></input><br>
             <br>
             <button id = "signinButton" ng-click="address_login()">Sign in</button>
+            <button ng-click="Signin_back()">Back</button>
+
         </div>
         <div id="logout_page" ng-show="show_logoutpage">
             <h3>You still have {{totalnum_in_cart}} item(s) in your cart</h3><br>
