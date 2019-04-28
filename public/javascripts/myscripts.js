@@ -240,6 +240,8 @@ FunBooks_app.controller('FunbooksController', function($scope, $http, $interval)
                 $scope.the_span_in_Classname_proceed_to_check_out = false;
                 $scope.showBookdetails_2 = true;
                 $scope.showBookdetail3_selectList = true;
+                $scope.showBookdetail4_Goback = true;
+                $scope.show_added_to_cart = false;
 
                 $scope.specific_bookid = bookid;
                 $scope.DetailsOfBooks_image = response.data.coverImage;
@@ -266,7 +268,28 @@ FunBooks_app.controller('FunbooksController', function($scope, $http, $interval)
             
             $scope.show_page_select = false;
     };
+    $scope.Signin_back = function(){
+            
+        $scope.showCategory = true;
+        $scope.show_signin = true;
+        $scope.show_books = true;
+        $scope.show_loginpage = false; 
+        $scope.show_page_select = true;
+        
+        $scope.showBookdetail4_Goback = false;
+        $scope.show_booksInitial = true;
+        $scope.showBookDetails = false; 
+        $scope.showCategory = true;
+        $scope.show_signin = true;
+        $scope.show_books = true;
+        $scope.show_loginpage = false;
 
+        $scope.show_user_if_login = false;
+        $scope.show_cart = false;
+        $scope.show_big_title = true;
+
+        $scope.show_page_select = true;
+    };
     $scope.address_login = function(){
         if(($scope.user_name == "") || ($scope.user_password == "") || ($scope.user_name == null) || ($scope.user_password == null)){
             alert("You must enter username and password");
@@ -315,7 +338,11 @@ FunBooks_app.controller('FunbooksController', function($scope, $http, $interval)
 
     };
     
-
+    $scope.address_login_enter = function(event){
+        if(event.keyCode == 13){
+            $scope.address_login();
+        }
+    }
 
     $scope.goBack = function(){
         if($scope.show_signin == false){
@@ -537,6 +564,7 @@ FunBooks_app.controller('FunbooksController', function($scope, $http, $interval)
             $scope.show_booksInitial = false;
             $scope.show_loaded_cart = true;
             $scope.booksInLoadedCard = true;
+            $scope.show_logoutpage = false;
             $scope.totalnum_in_cart_in_loadedcart = $scope.totalnum_in_cart;
 
             $http.get('/loadcart').then(function(response){
@@ -594,6 +622,18 @@ FunBooks_app.controller('FunbooksController', function($scope, $http, $interval)
                 }
             });
         }
+    }
+
+    $scope.Back = function(){
+        $scope.showCategory = true;
+        $scope.show_signin = false;
+        $scope.show_books = true;
+        $scope.show_loginpage = false; 
+        $scope.show_page_select = true;
+        $scope.show_booksInitial = true;
+        $scope.show_loaded_cart = false;
+        $scope.booksInLoadedCard = false;
+        $scope.showBookDetails = false;
     }
 
     $scope.UpdateCart = function(elem){
