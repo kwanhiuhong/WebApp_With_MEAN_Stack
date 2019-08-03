@@ -26,10 +26,10 @@
 ### Before you start the webapp on your own machine, you should first follow the steps below to set up a node.js runtime and your mongoDB:
 <ul>
     <li>
-        <a ref="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_nodejs_runtime_and_examples.pdf">Set up your Node.js runtime</a>
+        <a href="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_nodejs_runtime_and_examples.pdf">Set up your Node.js runtime</a>
     </li>
     <li>
-         <a ref="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_MongoDB.pdf">Set up your mongoDB</a>
+         <a href="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_MongoDB.pdf">Set up your mongoDB</a>
     </li>
 </ul>
 
