@@ -23,6 +23,16 @@
     </li>
 </ul>
 
+### Before you start the webapp on your own machine, you should first follow the steps below to set up a node.js runtime and your mongoDB:
+<ul>
+    <li>
+        <a ref="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_nodejs_runtime_and_examples.pdf">Set up your Node.js runtime</a>
+    </li>
+    <li>
+         <a ref="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_MongoDB.pdf">Set up your mongoDB</a>
+    </li>
+</ul>
+
 ### How to start the webapp on your own machine (For Mac Only):
 1. Set up the MongoDB path to the directory at where your project is located (See the highlighted)
 <img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/SettingUp_DbPath.png"/>
