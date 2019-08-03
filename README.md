@@ -1,45 +1,45 @@
 # This web application simulates an online bookstore, which was written in MEAN (MongoDB,express.js, AugularJS, Node.js) stack.
 
 ### Here is the UI of this page:
-<img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/Book_Shop_UI.png"/>
+<img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/Book_Shop_UI.png"/>
 
 ### It supports the following functionalities:
 <ul>
     <li>
         <h4>Login/Logout, the login status will be stored using sessions</h4>
-        <img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/LoginPage.png"/>
+        <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/LoginPage.png"/>
     </li>
     <li>
         <h4>Put books into your shopping cart</h4>
-        <img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/Your_Shopping_Cart.png"/>
+        <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/Your_Shopping_Cart.png"/>
     </li>
     <li>
         <h4>Make payments</h4>
-        <img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/Make_Payments.png"/>
+        <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/Make_Payments.png"/>
     </li>
     <li>
         <h4>Click the image of each book and you will see its description</h4>
-        <img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/Book_Details_Page.png"/>
+        <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/Book_Details_Page.png"/>
     </li>
 </ul>
 
 ### Before you start the webapp on your own machine, you should first follow the steps below to set up a node.js runtime and your mongoDB:
 <ul>
     <li>
-        <a href="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_nodejs_runtime_and_examples.pdf">Set up your Node.js runtime</a>
+        <a href="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack/blob/master/App_Screen_Shots/setup_nodejs_runtime_and_examples.pdf">Set up your Node.js runtime</a>
     </li>
     <li>
-         <a href="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/setup_MongoDB.pdf">Set up your mongoDB</a>
+         <a href="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack/blob/master/App_Screen_Shots/setup_MongoDB.pdf">Set up your mongoDB</a>
     </li>
 </ul>
 
 ### How to start the webapp on your own machine (For Mac Only):
 1. Set up the MongoDB path to the directory at where your project is located (See the highlighted)
-<img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/SettingUp_DbPath.png"/>
+<img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/SettingUp_DbPath.png"/>
 2. Start your mongo db on your terminal, please first locate where the "mongo" file is located (See the highlighted)
-<img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/Manipulate_YourDB.png"/>
+<img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/Manipulate_YourDB.png"/>
 3. Finally start your web app (See the highlighted):
-<img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/Start_YourWebApp_OnLocalHost.png"/>
+<img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/Start_YourWebApp_OnLocalHost.png"/>
 
 ###### Some special notes:
 
@@ -60,4 +60,4 @@ For line 298-308, 317-327, 341-352, 410-420, 461-472, 478-488, 535-545, they are
 3. Run the mongo and then typed "use FunBooks"
 4. type "show collections" you get what collections you have
 5. type "db.userCollection.find()" show all details about the user collection.
-<img src="https://github.com/kwanhiuhong/NodeJS_WebApp_Book_Store/blob/master/App_Screen_Shots/Get_User_Info_OnDB.png"/>
+<img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack_Book_Store/blob/master/App_Screen_Shots/Get_User_Info_OnDB.png"/>
