@@ -66,3 +66,8 @@ For line 298-308, 317-327, 341-352, 410-420, 461-472, 478-488, 535-545, they are
 4. type "show collections" you get what collections you have
 5. type "db.userCollection.find()" show all details about the user collection.
 <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack/blob/master/App_Screen_Shots/Get_User_Info_OnDB.png"/>
+
+
+### To change the record inside the collection in the DB, one can use the update function like:
+db.bookCollection.update( { "_id" : ObjectId('5ac44568d6cffc50b8904216') }, { $set: { "title" : "Intro to algorithm" } } )
+(Notice that for object id, you must include a single quote or double quote for it, otherwise error : "SyntaxError: identifier starts immediately after numeric literal" will be thrown)
