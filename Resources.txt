@@ -1,0 +1,5 @@
+http://forbeslindesay.github.io/express-route-tester/
+(check個path route得對不對)
+http://expressjs.com/en/guide/routing.html
+http://expressjs.com/en/4x/api.html#path-examples
+（都係關於routing）

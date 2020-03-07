@@ -35,10 +35,15 @@
 
 ### How to start the webapp on your own machine (For Mac Only):
 1. Set up the MongoDB path to the directory at where your project is located (See the highlighted)
+(Note that the MongoDB version for this webapp is 3.6, versions with 4.0 or higher are not supported)
+(You can download it here:
+https://www.mongodb.com/download-center/community)
 <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack/blob/master/App_Screen_Shots/SettingUp_DbPath.png"/>
 2. Start your mongo db on your terminal, please first locate where the "mongo" file is located (See the highlighted)
 <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack/blob/master/App_Screen_Shots/Manipulate_YourDB.png"/>
 3. Finally start your web app (See the highlighted):
+(Usually one can view this website through the link "https://localhost:8000"
+To control the port number, one can change the code inside bin/www)
 <img src="https://github.com/kwanhiuhong/WebApp_With_MEAN_Stack/blob/master/App_Screen_Shots/Start_YourWebApp_OnLocalHost.png"/>
 
 ###### Some special notes:
